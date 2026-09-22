@@ -1,6 +1,6 @@
 {
   "name": "@atul-shaw/create-next-app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Scaffold a production-ready Next.js app with an enforced feature-based architecture: TypeScript, Tailwind CSS v4, Zustand, axios, one-directional data flow, and lint-enforced boundaries.",
   "keywords": [
     "nextjs",
