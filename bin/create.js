@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, cpSync, statSync, renameSync } from "node:fs";
-import { join, dirname, resolve } from "node:path";
+import { join, dirname, resolve, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createInterface } from "node:readline/promises";
 
@@ -37,13 +37,14 @@ async function promptProjectName() {
 
 async function main() {
   const rawName = process.argv[2] ?? (await promptProjectName());
-  const name = toKebabCase(rawName);
+  const useCwd = rawName.trim() === ".";
+  const name = useCwd ? toKebabCase(basename(process.cwd())) : toKebabCase(rawName);
   if (!name) {
     console.error("Invalid project name.");
     process.exit(1);
   }
 
-  const target = resolve(process.cwd(), name);
+  const target = useCwd ? process.cwd() : resolve(process.cwd(), name);
   if (existsSync(target) && readdirSync(target).length > 0) {
     console.error(`"${name}" already exists and is not empty.`);
     process.exit(1);
