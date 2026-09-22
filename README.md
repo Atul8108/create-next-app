@@ -2,6 +2,8 @@
 
 Scaffold a new Next.js project with a production-ready, opinionated architecture — TypeScript, Tailwind CSS v4, Zustand, axios — structured so it stays maintainable as it grows, instead of becoming an unstructured pile of files six months in.
 
+> **Use `npx`, not `npm install`.** This is a CLI, not a library — `npm i @atul-shaw/create-next-app` just adds it to your `package.json` and does nothing else. Run it with `npx @atul-shaw/create-next-app <project-name>` (or `.` to scaffold into the current directory) instead.
+
 ## Contents
 
 - [Why this exists](#why-this-exists)
