@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // "divika-webapp-new" on this machine (e.g. cloned under a different name).
 const SOURCE = process.env.TEMPLATE_SOURCE_DIR
   ? resolve(process.env.TEMPLATE_SOURCE_DIR)
-  : join(__dirname, "..", "..", "divika-webapp-new");
+  : join(__dirname, "..", "..", "tamplate-next-webapp");
 const DEST = join(__dirname, "..", "template");
 
 if (!existsSync(SOURCE)) {
